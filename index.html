@@ -1,0 +1,133 @@
+<!DOCTYPE html>
+<html lang="it">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Andrea AI Playbook v4.2</title>
+    <style>
+        @import url('https://fonts.googleapis.com/css2?family=IBM+Plex+Serif:wght@300;400;500;600;700&display=swap');
+        :root {
+            --bg: #faf8f5; --card-bg: #ffffff; --text: #2c2c2c; --text-muted: #6b6b6b;
+            --border: #e5e0d5; --accent-gov: #2d3748; --accent-agent: #5a67d8;
+            --accent-autonomy: #319795; --accent-sop: #c05621; --accent-arch: #6b46c1;
+            --shadow: 0 1px 3px rgba(0,0,0,0.06), 0 1px 2px rgba(0,0,0,0.04);
+        }
+        * { margin: 0; padding: 0; box-sizing: border-box; }
+        body {
+            background: var(--bg); color: var(--text); font-family: 'IBM Plex Serif', Georgia, serif;
+            line-height: 1.7; font-weight: 400; -webkit-font-smoothing: antialiased;
+        }
+        .container { max-width: 1100px; margin: 0 auto; padding: 3rem 2rem 4rem; }
+        header { text-align: center; padding: 3rem 0 2.5rem; border-bottom: 1px solid var(--border); margin-bottom: 3rem; }
+        header h1 { font-size: 2.4rem; font-weight: 600; color: var(--accent-gov); margin-bottom: 0.35rem; }
+        header .version { display: inline-block; font-size: 0.85rem; font-weight: 500; text-transform: uppercase; background: var(--accent-gov); color: #fff; padding: 0.25rem 0.9rem; border-radius: 4px; margin-bottom: 0.6rem; }
+        header .subtitle { font-size: 1.05rem; color: var(--text-muted); font-style: italic; margin-top: 0.4rem; }
+        section { background: var(--card-bg); border: 1px solid var(--border); border-radius: 10px; padding: 2.2rem 2rem; margin-bottom: 2rem; box-shadow: var(--shadow); }
+        section h2 { font-size: 1.3rem; font-weight: 600; margin-bottom: 1.4rem; display: flex; align-items: center; gap: 0.55rem; }
+        section h2 .dot { display: inline-block; width: 10px; height: 10px; border-radius: 50%; }
+        .dot-gov { background: var(--accent-gov); } .dot-autonomy { background: var(--accent-autonomy); } .dot-sop { background: var(--accent-sop); }
+        .svg-wrapper { display: flex; justify-content: center; overflow-x: auto; padding: 0.5rem 0; font-family: 'IBM Plex Serif', serif; }
+        .legend-grid { display: grid; grid-template-columns: repeat(auto-fill, minmax(260px, 1fr)); gap: 1rem; margin-top: 1.5rem; }
+        .legend-item { display: flex; align-items: flex-start; gap: 0.65rem; padding: 0.75rem 0.9rem; background: var(--bg); border-radius: 6px; font-size: 0.9rem; }
+        .legend-item .icon { flex-shrink: 0; width: 32px; height: 32px; border-radius: 6px; display: flex; align-items: center; justify-content: center; font-weight: 600; font-size: 0.75rem; color: #fff; }
+        .legend-item .desc strong { display: block; font-weight: 600; font-size: 0.92rem; line-height: 1.3; margin-bottom: 0.15rem; }
+        .legend-item .desc span { color: var(--text-muted); font-size: 0.82rem; line-height: 1.5; }
+        footer { text-align: center; color: var(--text-muted); font-size: 0.82rem; padding: 2rem 0 1rem; border-top: 1px solid var(--border); margin-top: 1rem; }
+        @media (max-width: 640px) { .container { padding: 1.5rem 1rem; } header h1 { font-size: 1.7rem; } section { padding: 1.5rem 1.2rem; } .legend-grid { grid-template-columns: 1fr; } }
+    </style>
+</head>
+<body>
+<div class="container">
+    <header>
+        <div class="version">v4.2</div>
+        <h1>Andrea AI Playbook</h1>
+        <p class="subtitle">Governance &amp; Supervisione — Architettura Multi-Agente</p>
+    </header>
+    <section>
+        <h2><span class="dot dot-gov"></span>Struttura Organizzativa</h2>
+        <div class="svg-wrapper">
+            <svg width="860" height="420" viewBox="0 0 860 420" xmlns="http://www.w3.org/2000/svg">
+                <style>
+                    .box { stroke-width: 1.5px; rx: 8px; }
+                    .gov-box { fill: #2d3748; stroke: #1a202c; color: #fff; }
+                    .agent-box { fill: #ebf4ff; stroke: #5a67d8; color: #2d3748; }
+                    .arch-box { fill: #faf5ff; stroke: #6b46c1; color: #44337a; }
+                    .title { font-size: 14px; font-weight: 600; }
+                    .subtitle { font-size: 11px; }
+                    .desc { font-size: 12px; }
+                    .line { stroke: #6b6b6b; stroke-width: 1.5px; marker-end: url(#arrow); }
+                    .line-label { fill: #6b6b6b; font-size: 11px; font-style: italic; }
+                </style>
+                <defs><marker id="arrow" viewBox="0 0 10 10" refX="5" refY="5" markerWidth="6" markerHeight="6" orient="auto-start-reverse"><path d="M 0 0 L 10 5 L 0 10 z" fill="#6b6b6b"/></marker></defs>
+                
+                <!-- Governance -->
+                <g transform="translate(20, 20)">
+                    <rect class="box gov-box" width="260" height="90"/><text x="130" y="25" text-anchor="middle" fill="#fff" class="title">🛡️ Governance &amp; Supervisione</text>
+                    <text x="50" y="55" text-anchor="middle" fill="#fff">Cleo<tspan class="subtitle" dy="12" x="50">Head of Ops</tspan></text>
+                    <text x="130" y="55" text-anchor="middle" fill="#fff">Atlas<tspan class="subtitle" dy="12" x="130">Team Leader</tspan></text>
+                    <text x="210" y="55" text-anchor="middle" fill="#fff">Counsel<tspan class="subtitle" dy="12" x="210">QA</tspan></text>
+                </g>
+                
+                <!-- Agenti -->
+                <g transform="translate(20, 150)">
+                    <rect class="box agent-box" width="820" height="150"/><text x="410" y="25" text-anchor="middle" class="title">🤖 Agenti Specialisti</text>
+                    <text x="70" y="60" text-anchor="middle">Max<tspan class="desc" dy="12" x="70">Backend & Coding</tspan></text>
+                    <text x="210" y="60" text-anchor="middle">Pixel<tspan class="desc" dy="12" x="210">UI/UX & Design</tspan></text>
+                    <text x="350" y="60" text-anchor="middle">Scribe<tspan class="desc" dy="12" x="350">Writing & Content</tspan></text>
+                    <text x="490" y="60" text-anchor="middle">Mark<tspan class="desc" dy="12" x="490">Marketing & Strategy</tspan></text>
+                    <text x="630" y="60" text-anchor="middle">Lex<tspan class="desc" dy="12" x="630">Legal & Compliance</tspan></text>
+                    <text x="770" y="60" text-anchor="middle">Scout<tspan class="desc" dy="12" x="770">Research & Data</tspan></text>
+                    <text x="410" y="120" text-anchor="middle">Visa<tspan class="desc" dy="12" x="410">Immigration & Bureaucracy</tspan></text>
+                </g>
+
+                <!-- Architettura -->
+                <g transform="translate(290, 340)">
+                     <rect class="box arch-box" width="550" height="60"/><text x="275" y="20" text-anchor="middle" class="title">⚙️ Architettura</text>
+                     <text x="90" y="45" text-anchor="middle">Gateway Unificato</text>
+                     <text x="275" y="45" text-anchor="middle">Memoria Condivisa</text>
+                     <text x="460" y="45" text-anchor="middle">Skill Dinamiche</text>
+                </g>
+
+                <!-- Connessioni -->
+                <line class="line" x1="150" y1="110" x2="430" y2="150"/>
+                <text class="line-label" x="280" y="125">supervisiona & assegna</text>
+                <line class="line" x1="430" y1="300" x2="565" y2="340"/>
+                <text class="line-label" x="480" y="315">interroga & utilizza</text>
+            </svg>
+        </div>
+    </section>
+    <section>
+        <h2><span class="dot dot-autonomy"></span>Livelli di Autonomia</h2>
+        <div class="svg-wrapper">
+             <svg width="800" height="120" viewBox="0 0 800 120" xmlns="http://www.w3.org/2000/svg">
+                <style>
+                    .autonomy-box { rx: 10px; stroke-width: 2px; }
+                    .a0 { fill: #fff5f5; stroke: #e53e3e; color: #742a2a; } .a1 { fill: #fffff0; stroke: #d69e2e; color: #744210; }
+                    .a2 { fill: #f0fff4; stroke: #38a169; color: #22543d; } .a3 { fill: #ebf8ff; stroke: #3182ce; color: #2a4365; }
+                    .autonomy-title { font-weight: 600; font-size: 13px; }
+                    .autonomy-desc { font-size: 11px; }
+                    .arrow-line { stroke: #6b6b6b; stroke-width: 1.5px; marker-end: url(#arrow-autonomy); }
+                </style>
+                <defs><marker id="arrow-autonomy" viewBox="0 0 10 10" refX="5" refY="5" markerWidth="6" markerHeight="6" orient="auto-start-reverse"><path d="M 0 0 L 10 5 L 0 10 z" fill="#6b6b6b"/></marker></defs>
+                
+                <g transform="translate(10, 10)"><rect class="autonomy-box a0" width="160" height="90"/><text x="80" y="30" text-anchor="middle" fill="#c53030">🔴 A0</text><text x="80" y="50" text-anchor="middle" class="autonomy-title">Supervisione Estesa</text><text x="80" y="70" text-anchor="middle" class="autonomy-desc">Richiede sempre approvazione</text></g>
+                <g transform="translate(210, 10)"><rect class="autonomy-box a1" width="160" height="90"/><text x="80" y="30" text-anchor="middle" fill="#b7791f">🟡 A1</text><text x="80" y="50" text-anchor="middle" class="autonomy-title">Supervisione Moderata</text><text x="80" y="70" text-anchor="middle" class="autonomy-desc">Notifica, chiede per task complessi</text></g>
+                <g transform="translate(410, 10)"><rect class="autonomy-box a2" width="160" height="90"/><text x="80" y="30" text-anchor="middle" fill="#2f855a">🟢 A2</text><text x="80" y="50" text-anchor="middle" class="autonomy-title">Autonomia Supervisionata</text><text x="80" y="70" text-anchor="middle" class="autonomy-desc">Notifica, procede in autonomia</text></g>
+                <g transform="translate(610, 10)"><rect class="autonomy-box a3" width="160" height="90"/><text x="80" y="30" text-anchor="middle" fill="#2c5282">🔵 A3</text><text x="80" y="50" text-anchor="middle" class="autonomy-title">Autonomia Completa</text><text x="80" y="70" text-anchor="middle" class="autonomy-desc">Agisce e riporta i risultati</text></g>
+
+                <line class="arrow-line" x1="175" y1="55" x2="205" y2="55"/><line class="arrow-line" x1="375" y1="55" x2="405" y2="55"/><line class="arrow-line" x1="575" y1="55" x2="605" y2="55"/>
+             </svg>
+        </div>
+    </section>
+    <section>
+        <h2><span class="dot dot-sop"></span>Protocolli Operativi (SOP)</h2>
+        <div class="legend-grid">
+            <div class="legend-item"><div class="icon" style="background:var(--accent-sop); opacity:0.6;">P1</div><div class="desc"><strong>P1: Low Risk</strong><span>Azioni sicure, a basso impatto, completamente automatizzabili.</span></div></div>
+            <div class="legend-item"><div class="icon" style="background:var(--accent-sop); opacity:0.8;">P2</div><div class="desc"><strong>P2: Conditional</strong><span>Esegui e notifica. Se la fiducia è alta, procedi; altrimenti, chiedi.</span></div></div>
+            <div class="legend-item"><div class="icon" style="background:var(--accent-sop); opacity:1.0;">P3</div><div class="desc"><strong>P3: High Risk</strong><span>Richiede sempre l'approvazione umana esplicita.</span></div></div>
+        </div>
+    </section>
+    <footer><p>&copy; 2026 Andrea Sassi</p></footer>
+</div>
+</body>
+</html>
